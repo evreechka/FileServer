@@ -20,10 +20,8 @@ public class Main {
                     System.out.println("The request was sent.");
                     return;
                 }
-//                    Path root = Path.of(System.getProperty("user.dir"), "File Server", "task", "src", "server", "data");
                 Path root = Path.of(System.getProperty("user.dir"), "src", "server", "data");
                 Path clientRoot = Path.of(System.getProperty("user.dir"), "src", "client", "data");
-//                    Path clientRoot = Path.of(System.getProperty("user.dir"),  "File Server", "task", "src", "client", "data");
                 switch (commandNum) {
                     case ("1"): {
                         Scanner scanner1 = new Scanner(System.in);

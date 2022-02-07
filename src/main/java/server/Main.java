@@ -14,8 +14,7 @@ import java.util.concurrent.Executors;
 public class Main {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        Path root = Path.of(System.getProperty("user.dir"), "src", "server", "data");
-//        Path root = Path.of(System.getProperty("user.dir"), "File Server", "task", "src", "server", "data");
+        Path root = Path.of(System.getProperty("user.dir"), "src","main", "java",  "server", "data");
         File mapFile = new File(root.toString() + "/map.txt");
         FileInputStream fis = null;
         try {
@@ -36,8 +35,7 @@ public class Main {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        FileManager fileManager = new FileManager(map);
-//        System.out.println("Server started!");
+        server.FileManager fileManager = new server.FileManager(map);
         ServerSocket serverSocket = new ServerSocket(6666);
         while (true) {
             try (
@@ -50,7 +48,6 @@ public class Main {
                 if (command.equals("EXIT")) {
                     new ObjectOutputStream(new FileOutputStream(mapFile)).writeObject(fileManager.getMap());
                     serverSocket.close();
-//                    socket.close();
                     System.exit(0);
                 }
                 if (command.equals("PUT")) {
