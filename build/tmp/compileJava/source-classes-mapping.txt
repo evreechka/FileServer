@@ -1,6 +1,0 @@
-server/FileManager.java
- server.FileManager
-client/Main.java
- client.Main
-server/Main.java
- server.Main
